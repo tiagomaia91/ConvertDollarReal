@@ -1,0 +1,46 @@
+package com.example.teste01;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.text.DecimalFormat;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText edtValorDolar, edtQuantidadeDolar;
+    TextView txtResultado;
+
+
+    
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        edtValorDolar = findViewById(R.id.edtValorDolar);
+        edtQuantidadeDolar = findViewById(R.id.edtQuantidadeDolar);
+
+        txtResultado = findViewById(R.id.txtResultado);
+
+
+    }
+
+    public void calcular(View view) {
+
+        double quantDolar = Double.parseDouble(edtQuantidadeDolar.getText().toString());
+        double valorDolar = Double.parseDouble(edtValorDolar.getText().toString());
+
+        double totalReais = valorDolar * quantDolar;
+
+        txtResultado.setText("R$: " + totalReais);
+
+
+
+
+    }
+
+
